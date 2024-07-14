@@ -1,3 +1,4 @@
-streamlit==1.20.0
-plotly==5.10.0
-streamlit-option-menu==0.0.5
+streamlit
+plotly
+streamlit-option-menu
+smtplib
