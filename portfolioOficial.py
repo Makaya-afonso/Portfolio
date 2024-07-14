@@ -107,9 +107,9 @@ with st.container():
                     - __Computação distribuída__: PySpark
                     - __Visualizations__: Streamlit, Matplotlib, Seaborn, Jupyter
                 - __SQL__: MySQL, SQLite, Oracle
-                __Power BI__
-                __Oracle Data Visualization__
-                - __Other__:
+                - __Power BI__
+                - __Oracle Data Visualization__
+                - __Outras__:
                     - __Metodologias Ágeis__: Scrum 
                     - __Soft Skill__: Trabalho em equipe, proatividade, aprendizado contínuo, comunicação eficaz.
                 """)
