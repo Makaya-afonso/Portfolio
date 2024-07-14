@@ -2,4 +2,3 @@ streamlit
 plotly
 streamlit-option-menu
 smtplib
-email.mime.text
