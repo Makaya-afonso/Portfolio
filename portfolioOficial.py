@@ -12,10 +12,10 @@ st.set_page_config(layout="wide")
 # Barra lateral
 with st.sidebar:
     st.markdown('<h1 style="color: gray;">Meu Portfólio</h1>', unsafe_allow_html=True)
-    st.markdown('<a href="#inicio" style="color: #BFC5D3; text-decoration: none;"><i class="bi bi-house"></i> Início</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#sobre" style="color: #BFC5D3; text-decoration: none;"><i class="bi bi-person"></i> Sobre</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#projetos" style="color: #BFC5D3; text-decoration: none;"><i class="bi bi-code-slash"></i> Projetos</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#contato" style="color: #BFC5D3; text-decoration: none;"><i class="bi bi-chat-left-text-fill"></i> Contato</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#inicio" style="color: gray; text-decoration: none;"><i class="bi bi-house"></i> Início</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#sobre" style="color: gray; text-decoration: none;"><i class="bi bi-person"></i> Sobre</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#projetos" style="color: gray; text-decoration: none;"><i class="bi bi-code-slash"></i> Projetos</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#contato" style="color: gray; text-decoration: none;"><i class="bi bi-chat-left-text-fill"></i> Contato</a>', unsafe_allow_html=True)
 
 # HTML para incluir Bootstrap Icons CSS
 st.markdown("""
@@ -255,24 +255,26 @@ with st.container():
     col1_contato, col2_contato = st.columns(2, gap="large")
 
     with col1_contato:
-        st.markdown("<h3 style='color: #FF4B4B;'>Envie uma Mensagem</h3>", unsafe_allow_html=True)
-        nome = st.text_input("Seu Nome:")
-        email = st.text_input("Seu Email:")
-        mensagem = st.text_area("Mensagem:")
-        
-        if st.button("Enviar"):
-            resultado = send_email(nome, email, mensagem)
-            st.success(resultado)
+        st.markdown("<h3 style='color: #FF4B4B;'>>Envie uma Mensagem</h3>", unsafe_allow_html=True)
+        with st.expander('Show/Hide', expanded=True):
+            nome = st.text_input("Seu Nome:")
+            email = st.text_input("Seu Email:")
+            mensagem = st.text_area("Mensagem:")
+            
+            if st.button("Enviar"):
+                resultado = send_email(nome, email, mensagem)
+                st.success(resultado)
 
     # Coluna 2: Informações de Contato
     with col2_contato:
-        st.markdown("<h3 style='color: #FF4B4B;'>Informações de Contato</h3>", unsafe_allow_html=True)
-        st.write("""
-        <div class="contact-info">
-            <p><i class="bi bi-envelope"></i> Email: makaya.afs@gmail.com</p>
-            <p><i class="bi bi-telephone"></i> Telefone: +55 11 97743-0688</p>
-            <p><i class="bi bi-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/makaya-afonso-41897425a" target="_blank">Makaya Afonso</a></p>
-            <p><i class="bi bi-tiktok"></i> TikTok: <a href="https://www.tiktok.com/@makayaafonso" target="_blank">Makaya Afonso</a></p>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown("<h3 style='color: #FF4B4B;'>>Informações de Contato</h3>", unsafe_allow_html=True)
+        with st.expander('Show/Hide', expanded=True):
+            st.write("""
+            <div class="contact-info">
+                <p><i class="bi bi-envelope"></i> Email: makaya.afs@gmail.com</p>
+                <p><i class="bi bi-telephone"></i> Telefone: +55 11 97743-0688</p>
+                <p><i class="bi bi-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/makaya-afonso-41897425a" target="_blank">Makaya Afonso</a></p>
+                <p><i class="bi bi-tiktok"></i> TikTok: <a href="https://www.tiktok.com/@makayaafonso" target="_blank">Makaya Afonso</a></p>
+            </div>
+            """, unsafe_allow_html=True)
 st.markdown("<hr style='border: 1px solid #FF4B4B;'>", unsafe_allow_html=True)
