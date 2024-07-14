@@ -23,7 +23,8 @@ def conteiner_with_icon(icon, label):
     return f'<div class="tab-title"><i class="bi bi-{icon}"></i> {label}</div>'
 
 # Seção Início
-st.write('---')
+st.markdown("<hr style='border: 1px solid #FF4B4B;'>", unsafe_allow_html=True)
+
 with st.container():
     st.markdown('<a id="inicio"></a>', unsafe_allow_html=True)
     col1_inicio, col2_inicio = st.columns(2)
@@ -31,7 +32,7 @@ with st.container():
     with col1_inicio:
         st.markdown(conteiner_with_icon('house', ' '), unsafe_allow_html=True)
         st.subheader("Olá! :wave:")
-        st.title("Meu Site de Portfólio")
+        st.markdown("<h1 style='color: #FF4B4B;'>Meu Site de Portfólio</h1>", unsafe_allow_html=True)
         st.subheader("Bem-vindo ao meu portfólio.")
         st.write("""
             \nSou Makaya Afonso, um profissional apaixonado por ciência de dados, automação, visualização de dados, gestão de negócios e acima de tudo resolver problemas.
@@ -42,57 +43,76 @@ with st.container():
     with col2_inicio:
         st.image("pc_image.gif", caption=" ", use_column_width=True)
 
-st.write('---')
+st.markdown("<hr style='border: 1px solid #FF4B4B;'>", unsafe_allow_html=True)
+
 
 # Seção Sobre
 with st.container():
     st.markdown('<a id="sobre"></a>', unsafe_allow_html=True)
     st.markdown(conteiner_with_icon('person', 'Sobre'), unsafe_allow_html=True)
-
-    col1_sobre, col2_sobre, col3_sobre = st.columns(3)
+    
+    col1_sobre, col2_sobre, col3_sobre = st.columns(3, gap="large")
 
     with col1_sobre:
-        st.subheader("Formação Acadêmica")
-        st.markdown("""
-            - Universidade Cruzeiro do Sul            
-                - **Curso:** Ciência da Computação         
-                - **Grade**: 4°Semestre
-                - **Previsão de Término:** 2026
-        """)
+      
+        st.markdown("<h3 style='color: #FF4B4B;'>Formação Acadêmica</h3>", unsafe_allow_html=True)
+        with st.expander('Show/Hide', expanded=True):
+            st.subheader('Bacharelado', divider='gray')
+            st.markdown("""
+                - __Universidade Cruzeiro do Sul__
+                    - __Curso__: Ciência da Computação
+                    - __Grade__: 4°Semestre
+                    - __Previsão de Término:__: 2026
+                """)
+
+
+
 
     with col2_sobre:
-        st.subheader("Experiência Profissional")
-        st.markdown("""
-        - **Empresa:** American Tower
-          - **Duração:** (5/2023 - Emprego atual)
-          - **Área:** IT Business Partner
-          - **Cargo:** Estagiário
-          - **Detalhes:**
-            - Gestão de Negócio.
-            - Tratamento de Dados com Oracle Analytics, ODV e Excel.
-            - Elaboração de Relatórios com Power BI.
-            - Automação de Processos com Python.
-        """)
+        st.markdown("<h3 style='color: #FF4B4B;'>Experiência Profissional</h3>", unsafe_allow_html=True)
+        with st.expander('Show/Hide', expanded=True):
+            st.subheader('Estágio', divider='gray')
+            st.markdown("""
+                - __Empresa__: American Tower
+                    - __Duração__: (05/2023-Emprego atual)
+                    - __Área__: Business Partner
+                - __Detalhes__
+                    - Gestão de Negócio.
+                    - Tratamento de Dados com Oracle Analytics, ODV e Excel.
+                    - Elaboração de Relatórios com Power BI.
+                    - Automação de Processos com Python.
+                """)
 
     with col3_sobre:
-        st.write("### Habilidades e Ferramentas")
-        st.write("""
-            - **Linguagens e Bibliotecas:** Python, Pandas, Flask, NumPy, SciPy, Matplotlib, Scikit-learn, TensorFlow, Keras, BeautifulSoup, Requests, PyTorch, Seaborn, Plotly, Dash, Jupyter, OpenCV, NLTK, Spacy, XGBoost, LightGBM, Bokeh, Altair, Django, Apache Spark, CustomTkinter, FFmpeg, OpenAI.
-            - **Ferramentas de Visualização:** Power BI, Oracle Data Visualization, Excel, Python.
-            - **Gestão de Dados:** MySQL, Oracle.
-            - **Metodologias Ágeis:** Scrum.
-            - **Outras Habilidades:** Trabalho em equipe, proatividade, aprendizado contínuo, IA e ML, comunicação eficaz, gerenciamento de projetos.
-        """)
-
-    # Gráfico de Barras
+        st.markdown("<h3 style='color: #FF4B4B;'>Habilidades</h3>", unsafe_allow_html=True)
+        with st.expander('Show/Hide', expanded=True):
+            st.subheader('Programação e Ferramentas', divider='gray')
+            st.markdown("""
+                - __Python__
+                    - __Numérico__: NumPy, Statsmodels, SciPy 
+                    - __Dados__: Pandas,requests, SQLAlchemy, FastAPI
+                    - __Machine Learning__: PyTorch, Scikit-Learn,Hyperopt, TensorFlow
+                    - __Computação distribuída__: PySpark
+                    - __Visualizations__: Streamlit, Matplotlib, Seaborn, Jupyter
+                - __SQL__: MySQL, SQLite, Oracle
+                __Power BI__
+                __Oracle Data Visualization__
+                - __Other__:
+                    - __Metodologias Ágeis__: Scrum 
+                    - __Soft Skill__: Trabalho em equipe, proatividade, aprendizado contínuo, comunicação eficaz.
+                """)
+            
+        # Gráfico de Barras
     skills = ['Python', 'Power BI', 'SQL', 'Machine Learning', 'Oracle Data Visualization', 'Power Automate', 'Power App']
-    skill_levels = [95, 85, 80, 75, 70, 90, 90]
+    skill_levels = [95, 85, 80, 75, 70, 90, 90]        
+    with st.expander('Show/Hide', expanded=True):
+        st.subheader('Minhas Habilidades em %', divider='gray')
+        fig = go.Figure(data=[go.Bar(x=skills, y=skill_levels, marker_color='royalblue')])
+        fig.update_layout(title_text='', xaxis_title='Habilidade', yaxis_title='Nível')
+        st.plotly_chart(fig)
 
-    fig = go.Figure(data=[go.Bar(x=skills, y=skill_levels, marker_color='royalblue')])
-    fig.update_layout(title_text='Minhas Habilidades em %', xaxis_title='Habilidade', yaxis_title='Nível')
-    st.plotly_chart(fig)
+st.markdown("<hr style='border: 1px solid #FF4B4B;'>", unsafe_allow_html=True)
 
-st.write('---')
 
 # Seção Projetos
 with st.container():
@@ -198,7 +218,8 @@ with st.container():
                 st.video("https://youtu.be/Se96OW5Gwmw?si=Z7trN8tV9OyD7UAg")
                 st.write("Aprenda como gerar QR code no Python.")
 
-st.write('---')
+st.markdown("<hr style='border: 1px solid #FF4B4B;'>", unsafe_allow_html=True)
+
 
 # Seção Contato
 with st.container():
