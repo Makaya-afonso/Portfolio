@@ -11,11 +11,19 @@ st.set_page_config(layout="wide")
 
 # Barra lateral
 with st.sidebar:
-    st.markdown('<h1 style="color: gray;">Meu Portfólio</h1>', unsafe_allow_html=True)
-    st.markdown('<a href="#inicio" style="color: gray; text-decoration: none;"><i class="bi bi-house"></i> Início</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#sobre" style="color: gray; text-decoration: none;"><i class="bi bi-person"></i> Sobre</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#projetos" style="color: gray; text-decoration: none;"><i class="bi bi-code-slash"></i> Projetos</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#contato" style="color: gray; text-decoration: none;"><i class="bi bi-chat-left-text-fill"></i> Contato</a>', unsafe_allow_html=True)
+    st.markdown("""
+    <style>
+        .centered-title {
+            text-align: center;
+        }
+    </style>
+    <h1 class="centered-title">Meu Portfólio</h1>
+""", unsafe_allow_html=True)
+    st.image("Avatar.jpeg", use_column_width=True)
+    st.markdown('<a href="#inicio" style="text-decoration: none;"><i class="bi bi-house"></i> Início</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#sobre" style="text-decoration: none;"><i class="bi bi-person"></i> Sobre</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#projetos" style="text-decoration: none;"><i class="bi bi-code-slash"></i> Projetos</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#contato" style="text-decoration: none;"><i class="bi bi-chat-left-text-fill"></i> Contato</a>', unsafe_allow_html=True)
 
 # HTML para incluir Bootstrap Icons CSS
 st.markdown("""
