@@ -34,7 +34,7 @@ with st.container():
         st.title("Meu Site de Portfólio")
         st.subheader("Bem-vindo ao meu portfólio.")
         st.write("""
-            \nSou Makaya Afonso, um profissional apaixonado por ciência de dados, automação, visualização de dados e gestão de negócios.
+            \nSou Makaya Afonso, um profissional apaixonado por ciência de dados, automação, visualização de dados, gestão de negócios e acima de tudo resolver problemas.
             \nAqui você encontrará informações sobre minha formação, experiência profissional e projetos, se despertar interesses entre em contato comigo.
             \nTake Your Time:blush:!
         """)
